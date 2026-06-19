@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Management Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="header-copy">
+        <p class="header-eyebrow">Rennie Library 📚</p>
+        <h1>Document Management Dashboard</h1>
+        <p class="header-tagline">Ingest, organise &amp; retrieve PDFs</p>
+        <p class="header-description">Upload PDFs into named folders. Files stay permanently. Visitors can browse and download freely.</p>
+      </div>
+      <div class="student-info">
+        <p><span>Name</span>Atupa Blessing Oyinkansola</p>
+        <p><span>Matric No</span>2023/12520</p>
+        <p><span>Department</span>Information Technology</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="dashboardContainer" class="dashboard-container">
+    <section class="panel ingestion-panel">
+      <h2>Document Ingestion</h2>
+      <input type="file" id="fileInput" accept="application/pdf" multiple />
+      <button id="uploadButton">Upload</button>
+      <div id="statusBanner" class="status-banner">
+        <div id="statusMessage" class="status-message"></div>
+      </div>
+      <div id="progressBar" class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="panel repository-panel">
+      <div class="repository-header">
+        <h2>Repository</h2>
+        <div class="repository-actions">
+          <select id="sortSelect" class="sort-select">
+            <option value="name">Sort by Name</option>
+            <option value="date">Sort by Date</option>
+          </select>
+          <input type="search" id="searchInput" placeholder="Search files..." />
+          <button id="selectAllButton" class="select-all-btn">Select All</button>
+          <button id="downloadSelectedButton" class="download-selected-btn">Download Selected</button>
+          <button id="downloadAllButton" class="download-all-btn">Download All</button>
+          <button id="deleteSelectedButton" class="delete-selected-btn">Delete Selected</button>
+          <button id="clearAllButton" class="clear-all-btn">Clear All</button>
+        </div>
+      </div>
+      <div class="selection-row">
+        <div id="selectedCount" class="selected-count">0 selected</div>
+        <div id="selectionBadge" class="selection-badge">No selection</div>
+      </div>
+      <ul id="repositoryList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
